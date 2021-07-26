@@ -21,7 +21,7 @@ function HomeView() {
   const youtubeVideos = 'items' in youtubeJson ? youtubeJson.items : [];
 
   return (
-    <HomeViewContainer>
+    <HomeViewContainer className="home-view-container">
       {youtubeVideos
         .filter((videoInfo) => videoInfo.id.kind.includes('video'))
         .map((videoInfo) => {
