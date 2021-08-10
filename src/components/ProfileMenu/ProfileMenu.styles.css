@@ -1,35 +1,12 @@
-.profile-menu-container {
-  background-color: #c2c3ff;
-  border-radius: 0 0 0 4px;
-  color: black;
-  height: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: 3.5em;
-  width: 16%;
-  min-width: 200px;
-  transition: height 0.25s ease-in;
-  -webkit-transition: height 0.25s ease-in;
-}
-
-.profile-menu-container.active {
-  -webkit-box-shadow: 0px 10px 13px -7px #000000, -5px 9px 12px 5px rgba(0, 0, 0, 0.35);
-  box-shadow: 0px 10px 13px -7px #000000, -5px 9px 12px 5px rgba(0, 0, 0, 0.35);
-  height: 140px;
-  transition: height 0.25s ease-in;
-  -webkit-transition: height 0.25s ease-in;
-}
-
 /***************THEME TOGGLE****************/
-.toggle {
+.toggle-checkbox {
   display: inline-block;
   height: 100%;
   position: relative;
   width: 50px;
 }
 
-.toggle input {
+.toggle-checkbox input {
   height: 0;
   opacity: 0;
   width: 0;

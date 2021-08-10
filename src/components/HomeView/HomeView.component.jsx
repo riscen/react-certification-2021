@@ -1,35 +1,25 @@
 import React from 'react';
-import styled from 'styled-components';
+import { HomeViewContainer } from './HomeView.modules';
 
 import VideoCard from '../VideoCard';
 
-import './HomeView.styles.css';
-
-import youtubeJson from '../../utils/mock/youtube-videos-mock.json';
-
-const HomeViewContainer = styled.div`
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 18px;
-  height: calc(100vh - 3.5em);
-  justify-content: center;
-  overflow-x: hidden;
-`;
-
-function HomeView() {
-  const youtubeVideos = 'items' in youtubeJson ? youtubeJson.items : [];
+function HomeView(props) {
+  const { youtubeData } = props;
+  const videos =
+    youtubeData !== undefined && 'items' in youtubeData ? youtubeData.items : [];
 
   return (
     <HomeViewContainer className="home-view-container">
-      {youtubeVideos
+      {videos
         .filter((videoInfo) => videoInfo.id.kind.includes('video'))
         .map((videoInfo) => {
           return (
             <VideoCard
               title={videoInfo.snippet.title}
               thumbnail={videoInfo.snippet.thumbnails.medium.url}
-              key={videoInfo.etag}
+              description={videoInfo.snippet.description}
+              videoId={videoInfo.id.videoId}
+              key={videoInfo.id.videoId}
             />
           );
         })}

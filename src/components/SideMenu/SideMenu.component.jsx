@@ -1,20 +1,29 @@
 import React from 'react';
-import styled from 'styled-components';
+import CloseIcon from '@material-ui/icons/Close';
 
-import './SideMenu.styles.css';
-
-const MenuItem = styled.div`
-  margin: 20px;
-`;
+import {
+  SideMenuContainer,
+  MenuItem,
+  CloseIconContainer,
+  CloseIconSpan,
+  MenuSeparator,
+} from './SideMenu.modules';
 
 function SideMenu(props) {
-  const { className } = props;
+  const { toggleSideMenu } = props;
+
   return (
-    <div className={`side-menu-container ${className}`}>
-      <MenuItem className="row">
+    <SideMenuContainer>
+      <CloseIconContainer onClick={() => toggleSideMenu(false)}>
+        <CloseIconSpan>
+          <CloseIcon />
+        </CloseIconSpan>
+      </CloseIconContainer>
+      <MenuSeparator />
+      <MenuItem>
         <span>This is the side menu :)</span>
       </MenuItem>
-    </div>
+    </SideMenuContainer>
   );
 }
 
