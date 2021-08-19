@@ -4,7 +4,7 @@ import { Paper } from '@material-ui/core';
 
 import {
   RelatedVideo,
-  RelatedVideThumbnail,
+  RelatedVideoThumbnail,
   RelatedVideoTitle,
 } from './RelatedVideoCard.modules';
 import './RelatedVideoCard.styles.css';
@@ -16,9 +16,9 @@ function RelatedVideoCard(props) {
     <Link to={`/video/${videoId}`} key={videoId}>
       <Paper className="related-video-card" elevation={3}>
         <RelatedVideo>
-          <RelatedVideThumbnail>
+          <RelatedVideoThumbnail>
             <img alt={title} src={imageUrl} />
-          </RelatedVideThumbnail>
+          </RelatedVideoThumbnail>
           <RelatedVideoTitle>{title}</RelatedVideoTitle>
         </RelatedVideo>
       </Paper>

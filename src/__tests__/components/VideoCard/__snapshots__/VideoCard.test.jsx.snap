@@ -1,37 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`VideoCard Renders VideoCard 1`] = `
-<a
-  href="/video/123456"
-  onClick={[Function]}
->
-  <div
-    className="MuiPaper-root video-card MuiPaper-elevation3 MuiPaper-rounded"
-  >
-    <div
-      className="sc-bdnxRM Zckej"
-    >
-      <img
-        alt="title"
-        src="img.jpg"
-      />
-    </div>
-    <div
-      className="sc-gtsrHT ipAONl"
-    >
-      <div
-        className="sc-dlnjwi xeLvv"
-      >
-        <span>
-          title
-        </span>
-      </div>
-      <div
-        className="sc-hKFxyN qYhat video-description-reduce"
-      >
-        description
-      </div>
-    </div>
-  </div>
-</a>
-`;
+exports[`VideoCard Renders VideoCard 1`] = `ReactWrapper {}`;

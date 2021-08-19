@@ -25,8 +25,8 @@ exports[`Header Renders header 1`] = `
     }
   >
     <Header
-      handleSubmit={[Function]}
-      setIsSideMenuActive={[Function]}
+      handleSubmit={[MockFunction]}
+      setIsSideMenuActive={[MockFunction]}
     >
       <WithStyles(ForwardRef(AppBar))
         position="sticky"

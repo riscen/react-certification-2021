@@ -7,7 +7,7 @@ export const RelatedVideo = styled.div`
   width: 100%;
 `;
 
-export const RelatedVideThumbnail = styled.div`
+export const RelatedVideoThumbnail = styled.div`
   margin-right: 5px;
 `;
 

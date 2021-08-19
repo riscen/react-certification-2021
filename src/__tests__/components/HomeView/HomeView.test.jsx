@@ -1,12 +1,23 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-import renderer from 'react-test-renderer';
+import { mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
-import HomeView from '../../../components/HomeView/HomeView.component';
+import HomeView, { HomeViewContainer } from '../../../components/HomeView';
 
 describe('HomeView', () => {
+  beforeEach(() => {
+    configure({ adapter: new Adapter() });
+  });
+
   it('Renders HomeView', () => {
-    const tree = renderer.create(<HomeView youtubeData={{}} />).toJSON();
-    expect(tree).toMatchSnapshot();
+    const wrapper = mount(<HomeView youtubeData={{}} />);
+    expect(wrapper).toMatchSnapshot();
+    wrapper.unmount();
+  });
+
+  it('Renders HomeViewContainer', () => {
+    const wrapper = mount(<HomeView youtubeData={{}} />);
+    expect(wrapper.find(HomeViewContainer)).toBeDefined();
+    wrapper.unmount();
   });
 });

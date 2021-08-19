@@ -20,9 +20,3 @@
   transition: max-height 0.2s ease-in;
   -webkit-transition: max-height 0.2s ease-in;
 }
-
-.video-description-reduce {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}

@@ -1,39 +1,90 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import '@testing-library/jest-dom/extend-expect';
-
 import Adapter from 'enzyme-adapter-react-16';
-import EnzymeToJson from 'enzyme-to-json';
 import { mount, configure } from 'enzyme';
 
-import VideoDetails from '../../../pages/VideoDetails/VideoDetails.page';
+import VideoDetails, {
+  VideoDetailsView,
+  VideoPlayer,
+  VideoDetailsContainer,
+  RelatedVideosContainer,
+} from '../../../pages/VideoDetails';
 
 describe('VideoDetails', () => {
-  let videoDetails;
   beforeEach(() => {
     configure({ adapter: new Adapter() });
-    videoDetails = mount(
+  });
+
+  it('Renders VideoDetails Page', () => {
+    const wrapper = mount(
       <BrowserRouter>
         <VideoDetails />
       </BrowserRouter>
     );
+    expect(wrapper).toMatchSnapshot();
+    wrapper.unmount();
   });
 
-  it('Renders VideoDetails Page', () => {
-    expect(EnzymeToJson(videoDetails)).toMatchSnapshot();
+  it('Contains VideoDetailsView', () => {
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find(VideoDetailsView)).toBeDefined();
+    wrapper.unmount();
+  });
+
+  it('Contains VideoDetailsContainer', () => {
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find(VideoDetailsContainer)).toBeDefined();
+    wrapper.unmount();
   });
 
   it('Contains Video Player', () => {
-    expect(videoDetails.find('#player')).toBeDefined();
-    expect(videoDetails.find('iframe')).toBeDefined();
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find(VideoPlayer)).toBeDefined();
+    expect(wrapper.find('#player')).toBeDefined();
+    expect(wrapper.find('iframe')).toBeDefined();
+    wrapper.unmount();
   });
 
   it('Displays Video Title', () => {
-    expect(videoDetails.find('.video-detail-title')).toBeDefined();
-    expect(videoDetails.find('h2')).toBeDefined();
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find('.video-detail-title')).toBeDefined();
+    expect(wrapper.find('h2')).toBeDefined();
+    wrapper.unmount();
   });
 
   it('Displays Video Description', () => {
-    expect(videoDetails.find('.video-detail-description')).toBeDefined();
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find('.video-detail-description')).toBeDefined();
+    wrapper.unmount();
+  });
+
+  it('Contains RelatedVideosContainer', () => {
+    const wrapper = mount(
+      <BrowserRouter>
+        <VideoDetails />
+      </BrowserRouter>
+    );
+    expect(wrapper.find(RelatedVideosContainer)).toBeDefined();
+    wrapper.unmount();
   });
 });

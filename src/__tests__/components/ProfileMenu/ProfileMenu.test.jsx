@@ -1,37 +1,31 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-
 import Adapter from 'enzyme-adapter-react-16';
-import EnzymeToJson from 'enzyme-to-json';
 import { mount, configure } from 'enzyme';
 
-import ProfileMenu from '../../../components/ProfileMenu/ProfileMenu.component';
-
-beforeAll(() => {
-  configure({ adapter: new Adapter() });
-});
+import ProfileMenu from '../../../components/ProfileMenu';
 
 describe('ProfileMenu', () => {
+  beforeEach(() => {
+    configure({ adapter: new Adapter() });
+  });
+
   it('Renders ProfileMenu', () => {
-    const auxFunc = () => true;
     const profileMenu = mount(
-      <ProfileMenu isProfileMenuActive={null} closeMenu={auxFunc} />
+      <ProfileMenu isProfileMenuActive={null} closeMenu={jest.fn()} />
     );
-    expect(EnzymeToJson(profileMenu)).toMatchSnapshot();
+    expect(profileMenu).toMatchSnapshot();
   });
 
   it('Renders Menu', () => {
-    const auxFunc = () => true;
     const profileMenu = mount(
-      <ProfileMenu isProfileMenuActive={null} closeMenu={auxFunc} />
+      <ProfileMenu isProfileMenuActive={null} closeMenu={jest.fn()} />
     );
     expect(profileMenu.find('#profile-menu')).toBeDefined();
   });
 
   it('Renders Change Theme Checkbox', () => {
-    const auxFunc = () => true;
     const profileMenu = mount(
-      <ProfileMenu isProfileMenuActive={null} closeMenu={auxFunc} />
+      <ProfileMenu isProfileMenuActive={null} closeMenu={jest.fn()} />
     );
     expect(profileMenu.find('label')).toBeDefined();
     expect(profileMenu.find('input[type="checkbox"]')).toBeDefined();

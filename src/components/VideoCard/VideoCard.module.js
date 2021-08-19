@@ -23,4 +23,10 @@ export const VideoTitle = styled.div`
 export const VideoDescription = styled.div`
   font-size: 12px;
   font-weight: normal;
+
+  &:hover {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
 `;
